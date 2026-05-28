@@ -62,7 +62,7 @@ function updateStats() {
 
 // Reproduction function
 function reproduce() {
-    if (round >= maxRounds) {
+    if (round > maxRounds) {
         alert('Game Over! Refresh to play again.');
         return;
     }
@@ -80,11 +80,16 @@ function reproduce() {
             newDots.push({ color: dot.color, element: clone });
         }
     });
+
     board.push(...newDots);
     round++;
     consumedCount = 0;
     document.getElementById('consumedCounter').innerText = 'Consumed: 0';
     updateStats();
+
+    if (round > maxRounds) {
+        alert('Final reproduction complete! Simulation is over.');
+    }
 }
 
 document.getElementById('startGame').onclick = generateBoard;
