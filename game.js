@@ -88,7 +88,7 @@ function reproduce() {
     updateStats();
 
     if (round > maxRounds) {
-        alert('Final reproduction complete! Simulation is over.');
+        alert('Final Round Complete! Click OK for the simulator to do the last reproduction for you.');
     }
 }
 
